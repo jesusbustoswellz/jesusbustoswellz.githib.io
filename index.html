@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGAN MIRANDA | VIII Años - Edición Niebla</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel+Decorative:wght@700;900&family=Great+Vibes&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- PANTALLA INICIAL CON FORMA DE SOBRE -->
+    <div class="pantalla-sobre" id="pantallaSobre">
+        <div class="sobre-3d" id="sobre3d">
+            <div class="sobre-solapa"></div>
+            <div class="sobre-cuerpo">
+                <p class="sobre-sub">INVITACIÓN OFICIAL • CAPÍTULO VIII</p>
+                <h2 class="sobre-titulo">MEGAN MIRANDA</h2>
+                <button class="btn-sello" id="btnAbrir">
+                    <span>ABRIR</span>
+                    <small>✨</small>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BARRA DE PROGRESO SUPERIOR -->
+    <div class="barra-progreso-top">
+        <div class="progreso-fill" id="barraTop"></div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE DE SILENCIO -->
+    <button class="btn-silencio" id="btnSilencio" title="Silenciar o activar música">🔊</button>
+    <audio id="audioFondo" autoplay loop>
+        <source src="musica2.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- CANVAS DE NIEBLA Y PARTÍCULAS -->
+    <canvas id="canvasParticulas"></canvas>
+
+    <!-- CONTENEDOR PRINCIPAL ESTILO GTA 6 -->
+    <main class="scrolly-wrapper">
+
+        <!-- ESCENA 1: PORTADA HERO -->
+        <section class="escena escena-hero" id="escena1">
+            <div class="capa-parallax" id="heroParallax">
+                <span class="etiqueta-edicion">RESPIRACIÓN DE LA NIEBLA • 8 AÑOS</span>
+                <img src="1.1.png" alt="Muichiro" class="img-hero-gta">
+                <h1 class="titulo-gta">
+                    MEGAN<br>
+                    <span class="acento-cyan">MIRANDA</span><br>
+                    VELASQUES
+                </h1>
+                <p class="scroll-hint">DESLIZA PARA DESCUBRIR ↓</p>
+            </div>
+        </section>
+
+        <!-- ESCENA 2: HISTORIA Y PERGAMINO -->
+        <section class="escena escena-historia bloque-magico" data-bg="niebla">
+            <div class="grid-gta">
+                <div class="col-visual pieza-magica" style="--orden: 1;">
+                    <div class="marco-poster">
+                        <span class="numero-roman"></span>
+                        <img src="pequeño.png" alt="Muichiro Chibi" class="img-poster flotar">
+                        
+                    </div>
+                </div>
+
+                <div class="col-texto pieza-magica" style="--orden: 2;">
+                    <span class="kicker">EL MENSAJE</span>
+                    <h2 class="titulo-seccion"> 8 AÑOS<br>DE AVENTURA</h2>
+                    <div class="pergamino" id="pergaminoInteractivo">
+                        <p class="indicador-toque">✨ TOCA EL PERGAMINO PARA REVELAR ✨</p>
+                        <div class="contenido-pergamino">
+                            <p class="frase-cursiva">
+                                "Ocho años llenos de magia y alegría,
+donde cada risa es un gran tesoro.
+Hoy el destino nos vuelve a reunir
+para celebrar una aventura inolvidable.
+¡Prepárate porque la fiesta va a comenzar!"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESCENA 3: FECHA Y CUENTA REGRESIVA -->
+        <section class="escena escena-fecha bloque-magico" data-bg="atardecer">
+            <div class="contenedor-centro">
+                <span class="kicker pieza-magica" style="--orden: 1;">EL GRAN DÍA SE ACERCA</span>
+                <h2 class="titulo-gigante-fondo pieza-magica" style="--orden: 2;">20 NOV</h2>
+                
+                <div class="tarjeta-fecha-gta pieza-magica" style="--orden: 3;">
+                    <div class="fecha-top">
+                        <span>VIERNES</span>
+                        <span class="punto">•</span>
+                        <span>20 DE NOVIEMBRE</span>
+                        <span class="punto">•</span>
+                        <span>2026</span>
+                    </div>
+
+                    <div class="reloj-gta" id="cuentaRegresiva">
+                        <div class="caja-tiempo"><span id="dias">00</span><small>DÍAS</small></div>
+                        <div class="caja-tiempo"><span id="horas">00</span><small>HRS</small></div>
+                        <div class="caja-tiempo"><span id="minutos">00</span><small>MIN</small></div>
+                        <div class="caja-tiempo"><span id="segundos">00</span><small>SEG</small></div>
+                    </div>
+
+                    <div class="hora-banner">HORA INICIO: 16:00 PM</div>
+                </div>
+
+                <img src="holas.png" alt="Saludo" class="img-flotante-grande pieza-magica" style="--orden: 4;">
+            </div>
+        </section>
+
+        <!-- ESCENA 4: CALENDARIO INTERACTIVO -->
+        <section class="escena escena-calendario bloque-magico" data-bg="profundo">
+            <div class="grid-gta invertido">
+                <div class="col-texto pieza-magica" style="--orden: 1;">
+                    <span class="kicker">MARCA TU CALENDARIO</span>
+                    <h2 class="titulo-seccion">NOVIEMBRE<br><span class="acento-dorado">2026</span></h2>
+                    
+                    <div class="calendario-gta" id="calendarioGrid">
+                        <div class="dia-sem">L</div><div class="dia-sem">M</div><div class="dia-sem">M</div>
+                        <div class="dia-sem">J</div><div class="dia-sem">V</div><div class="dia-sem">S</div><div class="dia-sem">D</div>
+
+                        <div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="d">1</div>
+                        <div class="d">2</div><div class="d">3</div><div class="d">4</div><div class="d">5</div><div class="d">6</div><div class="d">7</div><div class="d">8</div>
+                        <div class="d">9</div><div class="d">10</div><div class="d">11</div><div class="d">12</div><div class="d">13</div><div class="d">14</div><div class="d">15</div>
+                        <div class="d">16</div><div class="d">17</div><div class="d">18</div><div class="d">19</div>
+                        <div class="d d-activo">20</div>
+                        <div class="d">21</div><div class="d">22</div>
+                        <div class="d">23</div><div class="d">24</div><div class="d">25</div><div class="d">26</div><div class="d">27</div><div class="d">28</div><div class="d">29</div>
+                        <div class="d">30</div>
+                    </div>
+                </div>
+
+                <div class="col-visual pieza-magica" style="--orden: 2;">
+                    <div class="marco-poster secundario">
+                        <img src="amor.png" alt="Corazón" class="img-poster flotar">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESCENA 5: DOMICILIO Y PASTEL -->
+        <section class="escena escena-ubicacion bloque-magico" data-bg="niebla">
+            <div class="grid-gta">
+                <div class="col-visual pieza-magica" style="--orden: 1;">
+                    <div class="pastel-interactivo">
+                        <img src="chibi saludando debajo del reloj.png" alt="Pastel" class="img-pastel-gta" id="imgPastel">
+                        <span class="tag-pastel">✨ TOCA EL PASTEL PARA PEDIR UN DESEO ✨</span>
+                    </div>
+                </div>
+
+                <div class="col-texto pieza-magica" style="--orden: 2;">
+                    <span class="kicker">PUNTO DE ENCUENTRO</span>
+                    <h2 class="titulo-seccion">BARRIO<br><span class="acento-cyan">ARCOIRIS</span></h2>
+                    <div class="caja-direccion-gta">
+                        <p class="calle">CALLE 7 • NÚMERO 709</p>
+                        <p class="sub-dir">¡Será un gusto compartir este momento inolvidable contigo!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESCENA 6: CONFIRMACIÓN WHATSAPP -->
+        <section class="escena escena-final bloque-magico" data-bg="atardecer">
+            <div class="contenedor-centro">
+                <span class="kicker pieza-magica" style="--orden: 1;">ÚNETE A LA CELEBRACIÓN</span>
+                <h2 class="titulo-seccion pieza-magica" style="--orden: 2;">CONFIRMA TU<br><span class="acento-dorado">ASISTENCIA</span></h2>
+
+                <form class="form-gta pieza-magica" id="formWhatsapp" style="--orden: 3;">
+                    <input type="text" id="nombreInvitado" placeholder="ESCRIBE TU NOMBRE Y APELLIDO" required>
+                    <select id="respuestaAsistencia">
+                        <option value="¡Sí, ahí estaré con mucho gusto!">🎉 ¡SÍ, AHÍ ESTARÉ!</option>
+                        <option value="Iré acompañado(a) de mi familia">👨‍👩‍👧‍👦 ¡IRÉ CON MI FAMILIA!</option>
+                        <option value="Lamentablemente no podré asistir">😢 NO PODRÉ ASISTIR</option>
+                    </select>
+                    <button type="submit" class="btn-gta-confirmar">
+                        CONFIRMAR POR WHATSAPP →
+                    </button>
+                </form>
+
+                <footer class="footer-gta pieza-magica" style="--orden: 4;">
+                    <p>MEGAN MIRANDA VELASQUES • 8 AÑOS • NOVIEMBRE 2026</p>
+                </footer>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
